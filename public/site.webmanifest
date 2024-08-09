@@ -1,0 +1,32 @@
+{
+    "name": "Discover threejs",
+    "short_name": "threejs",
+    "description": "A threejs example of a Progressive Web App with a web manifest.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "/media/apple-touch-icon.png",
+        "type": "image/png",
+        "sizes": "180x180"
+      },
+      {
+        "src": "/media/favicon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/media/favicon-32x32.png",
+        "type": "image/png",
+        "sizes": "180x180"
+      },
+      {
+        "src": "/media/favicon-16x16.png",
+        "type": "image/png",
+        "sizes": "180x180"
+      }
+    ]
+  }
+  
