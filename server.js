@@ -3,9 +3,9 @@ const fs = require('fs');
 const https = require('https');
 const express = require('express');
 const path = require('path');
-const app = express();
 
-const PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.BACKEND_PORT || 3000;
 const SSLKEY = process.env.SSLKEY;
 const SSLCERT = process.env.SSLCERT;
 
@@ -32,10 +32,10 @@ const options = {
     })()
 };
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 https.createServer(options, app).listen(PORT, (err) => {
