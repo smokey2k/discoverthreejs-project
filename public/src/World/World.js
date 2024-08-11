@@ -1,15 +1,14 @@
 import { createCamera } from './components/camera.js';
 import { createCube } from './components/cube.js';
+import { createLights } from './components/lights.js';
 import { createScene } from './components/scene.js';
 
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/Resizer.js';
 
-// These variables are module-scoped: we cannot access them
-// from outside the module
+let scene;
 let camera;
 let renderer;
-let scene;
 
 class World {
   constructor(container) {
@@ -19,8 +18,9 @@ class World {
     container.append(renderer.domElement);
 
     const cube = createCube();
+    const light = createLights();
 
-    scene.add(cube);
+    scene.add(cube, light);
 
     const resizer = new Resizer(container, camera, renderer);
   }
